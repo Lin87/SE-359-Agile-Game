@@ -9,6 +9,8 @@ package edu.depaul.se359.agilegame.Player;
  */
 
 import java.util.ArrayList;
+
+import edu.depaul.se359.agilegame.Game;
 import edu.depaul.se359.agilegame.GameState.GameManager;
 
 public class TeamManager {
@@ -17,6 +19,7 @@ public class TeamManager {
     private int numTeams = 0;
     private int numPlayers = 0;
     private final ArrayList<Team> teams = new ArrayList<>();
+
 
     private TeamManager() {}
 
@@ -63,6 +66,7 @@ public class TeamManager {
         // save teams to the game state context
         GameManager.getInstance().saveTeams(this.getTeams());
 
+
     }
 
     private void createTeam() {
@@ -90,6 +94,14 @@ public class TeamManager {
 
         return teamToGet;
 
+    }
+
+    public void getID(){
+        Team t;
+        for(int i =0; i< this.teams.size(); i++)
+        {   t = this.teams.get(i);
+            System.out.println(t.getId());
+        }
     }
 
     public ArrayList<Team> getTeams() {
